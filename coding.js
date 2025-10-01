@@ -1,15 +1,14 @@
-let userName = 'John';
+let age = prompt("What is your age?", 18);
 
-function showMessage() {
-let  userName = "Bob"; // (1) changed the outer variable
-
-  let message = 'Hello, ' + userName;
- console.log(message);
+if (age < 18) {
+  function welcome() {
+    console.log("Hello DEAR YOUNG");
+  }
+} else {
+  function welcome() {
+    console.log("you are Greetings!");
+  }
 }
 
-console.log( userName ); // John before the function call
-
-showMessage();
-console.log( userName );
-
-
+// ...use it later
+welcome();
