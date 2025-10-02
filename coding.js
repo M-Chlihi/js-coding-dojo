@@ -1,29 +1,29 @@
+// function showPrimes(n) {
+//   nextPrime: for (let i = 2; i < n; i++) {
 
-let m = ["Ahmed", "Osama", "Sayed","Stop", "Samera"];
-let colors = ["Amgad", "Samah", "Ameer", "Omar","Sabir", "Othman", "Amany", "Samia", "Anwar", "Omayma"];
+//     for (let j = 2; j < i; j++) {
+//       if (i % j == 0) continue nextPrime;
+//     }
 
-let count = 0 ;
-for (let i = 0; i < m.length; i++) {
-    if (m[i]==="Stop") {
-        break;
+//     console.log( i ); // a prime
+//   }
+// }
+// showPrimes(4);
+function showPrimes(n) {
+  for (let i = 2; i < n; i++) {
+    let isPrime = true;
+
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break; // stop checking, it's not prime
+      }
     }
-     count++;
-    
+
+    if (isPrime) {
+      console.log(i);
+    }
+  }
 }
 
-document.write(`<h1>We have ${count} Admis</h1>`);
-
-for (let i = 0; i < count; i++) {
-    document.write(`<hr>`);
-    document.write(`<div class = "team">`);
-    document.write(`<span class = "admin-name"> the admine for team  ${i+1} is ${m[i]}</span>`);
-    document.write(`<h3> Team Membes: </h3>`);
-let k =1
-    for (let j = 0; j< colors.length; j++) {
-        if (m[i][0] === colors[j][0]) {
-        document.write(`<div class= "team"> ${k++} ${colors[j]}</div>`);
-        }
-    }
-document.write(`</div>`);
-
-}
+showPrimes(20);
