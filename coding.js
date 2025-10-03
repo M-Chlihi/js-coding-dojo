@@ -19,22 +19,31 @@
 // showPrimes(20);
 
 //SECOND
-function checkAge(age) {
-  if (age > 18) {
-    return true;
-  } else {
-    return console.log('Did parents allow you?');
-  }
-}
-function checkAge(age) {
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     return console.log('Did parents allow you?');
+//   }
+// }
+// function checkAge(age) {
   
-    return(age > 18) ? true : console.log('Did mother allow you?');
-}
-function checkAge(age) {
+//     return(age > 18) ? true : console.log('Did mother allow you?');
+// }
+// function checkAge(age) {
   
-    return(age > 18) || console.log('Did father allow you?');
+//     return(age > 18) || console.log('Did father allow you?');
+// }
+
+// checkAge(2);
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
 }
 
-checkAge(2);
-
-
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
