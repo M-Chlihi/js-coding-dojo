@@ -1,82 +1,50 @@
-function showInfo(a, b, c) {
-  let age = a;
-  age = Number.isInteger(a)
-    ? a
-    : Number.isInteger(b)
-    ? b
-    : Number.isInteger(c)
-    ? c
-    : console.log("system error");
-  let name;
-  name =
-    typeof a === "string"
-      ? a
-      : typeof b === "string"
-      ? b
-      : typeof c === "string"
-      ? c
-      : console.log("system error");
-  let status;
-  status =
-    typeof a === "boolean"
-      ? a
-      : typeof b === "boolean"
-      ? b
-      : typeof c === "boolean"
-      ? c
-      : console.log("system error");
 
-  console.log(
-    `HELLO ${name}, Your age is ${age} and You are ${status ? "avaliable to Hire!" : "NOT avaliable to Hire!"}  `
-  );
-}
-showInfo(false, "CHLIHI", 20);
+// Age calc basic
+const AgeCalculator = {
+  calculate: function (birthYear, birthMonth, birthDay) {
+    
+    const now = new Date();
+    const birthDate = new Date(birthYear, birthMonth - 1, birthDay);
 
-// function showPrimes(n) {
-//   for (let i = 2; i < n; i++) {
-//     let isPrime = true;
+    let years = now.getFullYear() - birthDate.getFullYear();
+    let months = now.getMonth() - birthDate.getMonth();
+    let days = now.getDate() - birthDate.getDate();
+    let hours = now.getHours() - birthDate.getHours();
+    if (hours < 0) {
+      days--;
+      const prevMonth = new Date(now.getMonth(), now.getDate(), 0);
+      days += prevMonth.getHours();
 
-//     for (let j = 2; j < i; j++) {
-//       if (i % j === 0) {
-//         isPrime = false;
-//         break; // stop checking, it's not prime
-//       }
-//     }
 
-//     if (isPrime) {
-//       console.log(i);
-//     }
-//   }
-// }
 
-// showPrimes(20);
+    }
+    if (days < 0) {
+      months--;
+      const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+      days += prevMonth.getDate();
+    }
 
-//SECOND
-// function checkAge(age) {
-//   if (age > 18) {
-//     return true;
-//   } else {
-//     return console.log('Did parents allow you?');
-//   }
-// }
-// function checkAge(age) {
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    
 
-//     return(age > 18) ? true : console.log('Did mother allow you?');
-// }
-// function checkAge(age) {
+    return {
+      years: years,
+      months: months,
+      days: days,
+      hours: hours,
+    };
+  },
 
-//     return(age > 18) || console.log('Did father allow you?');
-// }
-
-// checkAge(2);
-//new
-// function ask(question, yes, no) {
-//   if (confirm(question)) yes();
-//   else no();
-// }
-
-// ask(
-//   "Do you agree?",
-//   function() { alert("You agreed."); },
-//   function() { alert("You canceled the execution."); }
-// );
+  showResult: function (birthYear, birthMonth, birthDay) {
+    const result = this.calculate(birthYear, birthMonth, birthDay);
+    console.log(" yor Age :");
+    console.log(` ${result.years} years`);
+    console.log(` ${result.months} months`);
+    console.log(` ${result.days} days`);
+    console.log(` ${result.hours} hours`);
+  },
+};
+AgeCalculator.showResult(2006, 11, 10);
