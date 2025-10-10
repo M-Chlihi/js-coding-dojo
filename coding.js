@@ -2,7 +2,7 @@
 // Age calc basic
 const AgeCalculator = {
   calculate: function (birthYear, birthMonth, birthDay) {
-    
+
     const now = new Date();
     const birthDate = new Date(birthYear, birthMonth - 1, birthDay);
 
@@ -48,3 +48,4 @@ const AgeCalculator = {
   },
 };
 AgeCalculator.showResult(2006, 11, 10);
+//this is the end !
