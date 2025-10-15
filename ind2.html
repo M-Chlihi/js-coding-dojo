@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+  
+    <a class="link" href="#">SearchingText</a>
+    <script src="main.js">
+        var xpath = "//a[text()='SearchingText']";
+xpath = "chlihi";
+var xpath = "//a[contains(text(),'Searching')]";
+
+var matchingElement = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
+
+    </script>
+</body>
+</html>
