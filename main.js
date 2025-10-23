@@ -19,7 +19,7 @@ if (typeof document !== "undefined") {
     } else {
       h1s[0].setAttribute("class", "newvalue");
     }
-
+//testing 
 
     console.log(h1s[0].attributes);
   }
