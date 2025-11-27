@@ -11,11 +11,6 @@
 ### H3 - Heading 3
 
 #### H4 - Heading 4
-
-##### H5 - Heading 5
-
-###### H6 - Heading 6
-
 ---
 
 ## Text Formatting
@@ -50,7 +45,7 @@ _italic_ - Italic
 
 ---
 
-## Links and Images
+# Links and Images
 
 [Link text](https://example.com) - Hyperlink  
 ![Alt text](../imgs/javascript-logo-javascript-icon-transparent-free-png.png)
@@ -59,7 +54,7 @@ _italic_ - Italic
 
 ## Code
 
-### Inline Code
+## Inline Code
 
 `inline code` - Inline Code
 
