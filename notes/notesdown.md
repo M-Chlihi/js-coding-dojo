@@ -1,33 +1,90 @@
-# Markdown Cheat Sheet
+# Js Notes
+
+# creat products 2 methodes:
+
+methode 1
+
+```JS
+for (let i = 0; i < 10; i++) {
+  let myele = document.createElement("div");
+  let myheadele = document.createElement("h1");
+  let mytextele = document.createElement("p");
+
+  let myheader = document.createTextNode("Product Title " + i);
+  let myparag = document.createTextNode("this is one of the best product " + i);
+
+  // append header to the div
+  myheadele.appendChild(myheader);
+  myele.appendChild(myheadele);
+
+  // append parag to the div
+  mytextele.appendChild(myparag);
+  myele.appendChild(mytextele);
+
+  myele.className = "product";
+  document.body.appendChild(myele);
+}
+```
 
 ---
 
-## Headings
+methode 2
 
-# H1 - Heading 1
+```JS
+const frag = document.createDocumentFragment();
+for (let i = 0; i < 10; i++) {
+let mydiv = document.createElement("div");
+   mydiv.className = "product";
+   mydiv.innerHTML = `
+    <h1>Product Title ${i}</h1>
+    <p>This is one of the best products ${i}</p>
+   `
+   frag.appendChild(mydiv)
+}
+document.body.appendChild(frag);
+```
+# EVENTS IN JS
+### click event
+```JS
+// first form 
+document.getElementById("but1").onclick = function(){
+      console.log("Button clicked!");
+}
+// second form using addEventListener
+const btn = document.getElementById("but1");
+btn.addEventListener("click", function(){
+          console.log("Button clicked succesfully!");
+})
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+# Markdown Cheat Sheet
+---
+## Headings
 
 ## H2 - Heading 2
 
-### H3 - Heading 3
-
-#### H4 - Heading 4
-
-##### H5 - Heading 5
-
-###### H6 - Heading 6
-
----
-
 ## Text Formatting
 
-_italic_ - Italic  
-**bold** - Bold  
-**_bold italic_** - Bold Italic  
+_italic_ - Italic
+**bold** - Bold
+**_bold italic_** - Bold Italic
 ~~strikethrough~~ - Strikethrough
 
 ---
-
-## Lists
 
 ### Unordered List
 
@@ -43,17 +100,9 @@ _italic_ - Italic
    1. Subitem 2.1 - Nested Ordered List
    2. Subitem 2.2
 
-### Task List
-
-- [ ] Task not done - Task List
-- [x] Task done - Task Completed
-
----
-
 ## Links and Images
 
-[Link text](https://example.com) - Hyperlink  
-![Alt text](../imgs/javascript-logo-javascript-icon-transparent-free-png.png)
+[Link text](https://example.com) - Hyperlink
 
 ---
 
@@ -68,4 +117,4 @@ _italic_ - Italic
 ```JS
 console.log("Hello World");
 console.log("hey brother");
-```
+``` -->
