@@ -43,10 +43,13 @@ let mydiv = document.createElement("div");
 }
 document.body.appendChild(frag);
 ```
+
 # EVENTS IN JS
+
 ### click event
+
 ```JS
-// first form 
+// first form
 document.getElementById("but1").onclick = function(){
       console.log("Button clicked!");
 }
@@ -56,19 +59,6 @@ btn.addEventListener("click", function(){
           console.log("Button clicked succesfully!");
 })
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!--
 # Markdown Cheat Sheet
@@ -138,6 +128,9 @@ console.log("Hello World");
 console.log("hey brother");
 <<<<<<< HEAD
 ``` -->
+
 =======
+
 ```
 >>>>>>> b7cd295ef71fce9bd477bb639087f2128879531b
+```
