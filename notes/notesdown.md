@@ -77,6 +77,14 @@ btn.addEventListener("click", function(){
 
 ## H2 - Heading 2
 
+<<<<<<< HEAD
+=======
+### H3 - Heading 3
+
+#### H4 - Heading 4
+---
+
+>>>>>>> b7cd295ef71fce9bd477bb639087f2128879531b
 ## Text Formatting
 
 _italic_ - Italic
@@ -100,7 +108,18 @@ _italic_ - Italic
    1. Subitem 2.1 - Nested Ordered List
    2. Subitem 2.2
 
+<<<<<<< HEAD
 ## Links and Images
+=======
+### Task List
+
+- [ ] Task not done - Task List
+- [x] Task done - Task Completed
+
+---
+
+# Links and Images
+>>>>>>> b7cd295ef71fce9bd477bb639087f2128879531b
 
 [Link text](https://example.com) - Hyperlink
 
@@ -108,7 +127,7 @@ _italic_ - Italic
 
 ## Code
 
-### Inline Code
+## Inline Code
 
 `inline code` - Inline Code
 
@@ -117,4 +136,8 @@ _italic_ - Italic
 ```JS
 console.log("Hello World");
 console.log("hey brother");
+<<<<<<< HEAD
 ``` -->
+=======
+```
+>>>>>>> b7cd295ef71fce9bd477bb639087f2128879531b
