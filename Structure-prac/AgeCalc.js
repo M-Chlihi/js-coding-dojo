@@ -14,9 +14,6 @@ const AgeCalculator = {
       days--;
       const prevMonth = new Date(now.getMonth(), now.getDate(), 0);
       days += prevMonth.getHours();
-
-
-
     }
     if (days < 0) {
       months--;
