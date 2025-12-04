@@ -87,3 +87,26 @@ document.forms[0].onsubmit = function (e) {
   }
 };
 ```
+
+```JS
+// event stimmulations 
+let form1 = document.querySelector(".form1");
+let form2 = document.querySelector(".form2");
+
+window.onload = function () {
+  form1.focus();
+};
+form1.onblur = function () {
+  document.getElementById("cla").focus();
+};
+```
+# CSS Styling
+```JS 
+let mylink = document.getElementById("links")
+mylink.style.fontWeight = "bold";
+mylink.style.cssText = "color: red; font-Size: 20px; font-wight: bolder; text-decoration: double ";
+
+mylink.style.removeProperty("color");
+mylink.style.setProperty("color", "black");
+
+```
