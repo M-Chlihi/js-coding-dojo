@@ -5,8 +5,6 @@ document.getElementById("newin").onclick = function () {
   window.open();
 };
 
-// let prmptMsg = prompt("are u sure ?", "wrtie yes or No");
-// console.log( typeof prmptMsg);
 
 let hadler = setTimeout(() => {
     console.log("hi bro")
@@ -16,4 +14,3 @@ let btn = document.getElementById("win");
 btn.onclick = function () {
   clearTimeout(hadler)
 }
-// if u click in the timeoput stop and the function cant execute 
