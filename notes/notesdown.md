@@ -159,3 +159,47 @@ function goForward() {
 </body>
 </html>
 ```
+## Scroll To Top Using Y Practice
+```JS
+let btn = document.getElementById("btn");
+
+window.onscroll = function () {
+  if (window.scrollY >= 700) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+btn.onclick = function () {
+  window.scrollTo({
+    left: 0,
+    top: 0,
+    behavior: "smooth",
+  });
+};
+//css
+body{
+    width: 3000px;
+    height: 3000px;
+  }
+  #btn{
+    background-color: red;
+    border: none;
+    padding: 10px;
+    border-radius: 20%;
+    font-weight: bolder;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    display: none;
+    cursor:pointer;
+  }
+
+```
+## Local Storage Practice
+The localStorage object provides access to a local storage for a particular Web Site. It allows you to store, read, add, modify, and delete data items for that domain.
+
+The data is stored with no expiration date, and will not be deleted when the browser is closed.
+
+The data will be available for days, weeks, and years.
+
