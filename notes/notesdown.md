@@ -135,3 +135,27 @@ function decriment() {
 let counter = setInterval(decriment, 1500);
 
 ```
+
+## windows history object 
+history.back() - same as clicking back in the browser 
+
+history.forward() - same as clicking forward in the browser
+```JS
+<html>
+<head>
+<script>
+function goBack() {
+  window.history.back()
+}
+function goForward() {
+  window.history.forward()
+}
+</script>
+</head>
+<body>
+
+<input type="button" value="Back" onclick="goBack()">
+<input type="button" value="Forward" onclick="goForward()">
+</body>
+</html>
+```
