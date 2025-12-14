@@ -202,4 +202,22 @@ The localStorage object provides access to a local storage for a particular Web 
 The data is stored with no expiration date, and will not be deleted when the browser is closed.
 
 The data will be available for days, weeks, and years.
+```JS
+//setkey & value in local storage
+window.localStorage.setItem("color", "green");
+window.localStorage.backgroundColor = "yellow";
+window.localStorage["fontSize"] = "20px";
+//get key form local storage
+console.log(window.localStorage.getItem("backgroundColor"));
+console.log(window.localStorage.fontSize);
+
+//rempve or clear localstroage
+window.localStorage.clear() //remove all keys
+window.localStorage.removeItem("color");
+
+//testing in bodoy
+document.body.style.backgroundColor =
+  window.localStorage.getItem("backgroundColor");
+
+```
 
