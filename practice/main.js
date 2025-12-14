@@ -1,7 +1,4 @@
-/*
-  BOM [Browser Object Model]
-  Local Storage Practice
-*/
+
 
 let lis = document.querySelectorAll("ul li");
 let exp = document.querySelector(".experiment");
