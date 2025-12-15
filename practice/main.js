@@ -26,7 +26,7 @@ lis.forEach((li) => {
     e.currentTarget.classList.add("active");
     // Add Current Color To Local Storage
     window.localStorage.setItem("color", e.currentTarget.dataset.color);
-    // Change Div Background Color
+    // Change Div Background
     exp.style.backgroundColor = e.currentTarget.dataset.color;
   });
 });
