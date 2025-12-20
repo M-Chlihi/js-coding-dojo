@@ -1,16 +1,24 @@
+let input = document.querySelector(".input");
+let addbtn = document.querySelector(".add");
+let taskadd = document.querySelector(".tasks");
+let form = document.querySelector("form");
+
+window.onload = function () {
+  input.focus();
+};
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+const taskText = input.value.trim();
+  if (taskText === "") return;
+  const li = document.createElement("li");
+  li.textContent = taskText;
+  // li.style.width = "100%"
+  li.style.border = "black 2px solid"
 
 
-
-
-
-
-
-
-
-
-
-
-
+  taskadd.appendChild(li);
+  input.value = ""; 
+});
 
 
 
