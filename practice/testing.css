@@ -3,12 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 .container{
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: bisque;
-    
+    justify-content: center;
     
 }
 .form{
@@ -33,6 +33,12 @@
     font-weight: 700;
     cursor: pointer;
 }
-/* .tasks{
-    ²
-} */
+.tasks{
+   margin-top: 8%;
+   width: 32%;
+  align-items: center;
+  width: 32%;
+  margin: 40px 30%;
+
+
+}
