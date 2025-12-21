@@ -70,14 +70,6 @@ function createTaskElement(task) {
 function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
-// Source - https://stackoverflow.com/q/5933157
-// Posted by Newbie Coder, modified by community. See post 'Timeline' for change history
-// Retrieved 2025-12-21, License - CC BY-SA 3.0
-
-// function removeDummy() {
-//  var elem = document.getElementById('dummy');
-//  elem.parentNode.removeChild(elem);
-// }
 
 
 
