@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn JavaScript</title>
+    <link rel="stylesheet" href="testing.css" />
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f172a;
+    font-family: Arial, sans-serif;
+}
+h1{
+    color: #38bdf8;
+    text-align: center;
+    margin-top: 5%;
+    font-size: 45px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form {
+    margin: 0 10%;
+    margin-top: 8%;
+    background-color: #1e293b; 
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form .input {
+    width: 32%;
+    height: 46px;
+    border: 1px #38bdf8 solid; 
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 20px;
+    background-color: #020617;
+    color: #e5e7eb;
+}
+
+.form .add {
+    border: 2px #38bdf8 solid;
+    border-radius: 5px;
+    padding: 12px;
+    background: #0284c7; 
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form .add:hover {
+    background: #0369a1;
+}
+
+
+.tasks {
+    margin-top: 8%;
+    margin: 40px 20%;
+    background-color: #020617;
+    padding: 20px 60px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.tasks div {
+    background-color: #1e293b;
+    margin-top: 12px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+  </style>
+  </head>
+  <body>
+    <div class="container">
+     <h1>CHLIHI Mohamed</h1>
+<form class="form">
+  <input type="text" name="" class="input" placeholder="add your task...">
+  <input type="submit"  class="add" value="submit" >
+</form>
+
+<div class="tasks"></div>
+   </div>
+    <script >
+      let input = document.querySelector(".input");
+let addbtn = document.querySelector(".add");
+let taskadd = document.querySelector(".tasks");
+let form = document.querySelector("form");
+
+window.onload = function () {
+  input.focus();
+};
+// Load tasks from localStorage on page load
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+tasks.forEach(task => createTaskElement(task));
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const taskText = input.value.trim();
+  if (taskText === "") return;
+
+    const task = {
+    id: Date.now(),
+    title: taskText,
+    completed: false
+  };
+
+  tasks.push(task);
+  saveTasks();
+  createTaskElement(task);
+
+  
+});
+function createTaskElement(task) {
+  const li = document.createElement("div");
+  li.textContent = task.title;
+  li.style.border = "black 2px solid";
+
+ 
+
+  li.dataset.id = task.id;
+
+
+  const delet = document.createElement("button");
+  delet.textContent = "delete";
+ 
+  delet.style.padding = "6px 11px";
+  delet.style.fontSize = "13px";
+  delet.style.fontWeight = "600";
+  delet.style.border = "2px brown solid";
+  delet.style.background = "red";
+  delet.style.borderRadius = "4px";
+  delet.style.color = "#fffdfd";
+  delet.style.cursor = "pointer";
+  
+ li.appendChild(delet);
+   taskadd.appendChild(li);
+  input.value = "";
+  //delete tasks
+  delet.addEventListener("click", function () {
+    // Remove from array
+    tasks = tasks.filter(t => t.id !== task.id);
+    saveTasks();
+
+    // Remove from DOM
+    li.remove();
+  });
+ }
+
+// Save to localStorage
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+
+
+// let lis = document.querySelectorAll("ul li");
+// let exp = document.querySelector(".experiment");
+
+// if (window.localStorage.getItem("color")) {
+//   // If There Is Color In Local Storage
+//   // [1] Add Color To Div
+//   exp.style.backgroundColor = window.localStorage.getItem("color");
+//   // [2] Remove Active Class From All Lis
+//   lis.forEach((li) => {
+//     li.classList.remove("active");
+//   });
+//   // [3] Add Active Class To Current Color
+//   document.querySelector(`[data-color="${window.localStorage.getItem("color")}"]`).classList.add("active");
+// }
+
+// lis.forEach((li) => {
+//   li.addEventListener("click", (e) => {
+//     // console.log(e.currentTarget.dataset.color);
+//     // Remove Active Class From all Lis
+//     lis.forEach((li) => {
+//       li.classList.remove("active");
+//     });
+//     // Add Active Class To Current Element
+//     e.currentTarget.classList.add("active");
+//     // Add Current Color To Local Storage
+//     window.localStorage.setItem("color", e.currentTarget.dataset.color);
+//     // Change Div Background
+//     exp.style.backgroundColor = e.currentTarget.dataset.color;
+//   });
+// });
+
+    </script>
+  </body>
+</html>
