@@ -220,4 +220,30 @@ document.body.style.backgroundColor =
   window.localStorage.getItem("backgroundColor");
 
 ```
+## Destructuring Objects & array & function param
+```js
+let user = {
+  name: "chlihi",
+  age: 19,
+  firstName: "mohamed",
+  contry: "Morocco",
+  skills: {
+    html: 70,
+    javascript: 80,
+  },
+};
 
+const {
+  name: nm,
+  age: g,
+  firstName: fstnm,
+  contry: cnt,
+  skills: { html: ht, javascript: js },
+} = user;
+console.log(nm);
+console.log(g);
+console.log(fstnm);
+console.log(cnt);
+console.log(js);
+console.log(ht);
+```
