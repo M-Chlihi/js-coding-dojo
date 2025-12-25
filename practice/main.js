@@ -8,20 +8,32 @@ let user = {
     javascript: 80,
   },
 };
+//creating elelment
+const p = document.createElement("h2");
+const body = document.querySelector("body");
+showdetails(user);
+body.appendChild(p);
+//function for testing destructions fct
+function showdetails({name: n, age:ag, skills:{javascript: js} } =user ) {
 
-const {
-  name: nm,
-  age: g,
-  firstName: fstnm,
-  contry: cnt,
-  skills: { html: ht, javascript: js },
-} = user;
-console.log(nm);
-console.log(g);
-console.log(fstnm);
-console.log(cnt);
-console.log(js);
-console.log(ht);
+  p.innerText = `ur last name is: ${n} 
+  ur age is: ${ag} 
+  ur skills are: ${js}`;
+}
+
+// const {
+//   name: nm,
+//   age: g,
+//   firstName: fstnm,
+//   contry: cnt,
+//   skills: { html: ht, javascript: js },
+// } = user;
+// console.log(nm);
+// console.log(g);
+// console.log(fstnm);
+// console.log(cnt);
+// console.log(js);
+// console.log(ht);
 
 // let myNm = user.name;
 // let myage = user.age;
