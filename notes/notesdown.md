@@ -247,3 +247,15 @@ console.log(cnt);
 console.log(js);
 console.log(ht);
 ```
+## Set Data Types And Methods
+ ```JS
+ let arr = [1, 2, 3, 5, 1, 4, 1];
+let setUniqueValu = new Set(arr);
+setUniqueValu.add(2).add("chlihi")
+console.log(setUniqueValu);
+console.log(setUniqueValu.size);
+
+//Set vs WeakSet And Garbage Collector
+
+ ```
+## Map Data Type Vs Object
