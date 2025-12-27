@@ -1,51 +1,51 @@
-// let arr = [1, 2, 3, 5, 1, 4, 1];
-// let setUniqueValu = new Set(arr);
-// setUniqueValu.add(2).add("chlihi");
+let arrayLike = {
+  0: "Hello",
+  1: "World",
+  length: 2,
+};
 
-// console.log(setUniqueValu);
-// console.log(setUniqueValu.size);
-// console.log("#".repeat(20));
-// //weakset
-// let mywks = new WeakSet([{ A: 1, B: 2, C: 3 }]);
-// mywks.add([{ Z: 4 }]);
+let arr = Array.from(arrayLike); // (*)
+console.log(arr)
 
-// console.log(mywks.has([{ B: 2 }]));
-// console.log(mywks);
+    Number.prototype[Symbol.iterator] = function () {
+        let current = this
+        return {
+            next: () => {
+                if (current) {
+                    let value = current % 10
+                    current = parseInt(current / 10)
+                    return {value, done: false}
+                } else {
+                    return {done: true}
+                }
+            }
+        }
+    }
+    for (let i of 12345) {
+        console.log(i)
+    }
+   
+    console.log("#".repeat(20));
 
-// let chosen = 3;
-// let myFrnds = [
-//   {title: "moahmed", age: 39, availiable: true, skills:["html", "css"] },
-//   {title: "adam", age: 16, availiable: false, skills:["python", "tyescript"] },
-//   {title: "hamza", age: 8, availiable: true, skills:["php", "GO"] },
-// ]
+let randint = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+create_random = {
+min: -1,
+max: 90,
+lenght: 100,
+};
 
-// let {title,age , availiable, skills} = myFrnds[chosen - 1];
-// let lastskills = skills[skills.length -1]
-// console.log(`Ur Name: ${title}`)
-// console.log(`Ur Age: ${age}`)
-// console.log(`status: ${availiable ? "availibale": "Not availiabele"}`)
-// console.log(`Ur skill is : ${lastskills}`)
+create_random[Symbol.iterator] = function() {
+return {
+start: 0,
+min: this.min,
+max: this.max,
+lenght: this.lenght,
+next(){
+this.start++;
+return this.start < this.lenght ? {done:false, value:randint(this.min, this.max)} : {done:true};
+}
+};
+};
 
-// let user = {
-//   name: "chlihi",
-//   age: 19,
-//   firstName: "mohamed",
-//   contry: "Morocco",
-//   skills: {
-//     html: 70,
-//     javascript: 80,
-//   },
-// };
-// //creating elelment
-// const p = document.createElement("h2");
-// const body = document.querySelector("body");
-// showdetails(user);
-// body.appendChild(p);
-// //function for testing destructions fct
-// function showdetails({name: n, age:ag, skills:{javascript: js} } =user ) {
-
-//   p.innerText = `ur last name is: ${n}
-//   ur age is: ${ag}
-//   ur skills are: ${js}`;
-// }
-// //challenge
+let array = Array.from(create_random);
+console.log(array);
