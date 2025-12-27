@@ -1,8 +1,16 @@
-let arr = [1, 2, 3, 5, 1, 4, 1];
-let setUniqueValu = new Set(arr);
-setUniqueValu.add(2).add("chlihi")
-console.log(setUniqueValu);
-console.log(setUniqueValu.size);
+// let arr = [1, 2, 3, 5, 1, 4, 1];
+// let setUniqueValu = new Set(arr);
+// setUniqueValu.add(2).add("chlihi");
+
+// console.log(setUniqueValu);
+// console.log(setUniqueValu.size);
+// console.log("#".repeat(20));
+// //weakset
+// let mywks = new WeakSet([{ A: 1, B: 2, C: 3 }]);
+// mywks.add([{ Z: 4 }]);
+
+// console.log(mywks.has([{ B: 2 }]));
+// console.log(mywks);
 
 // let chosen = 3;
 // let myFrnds = [

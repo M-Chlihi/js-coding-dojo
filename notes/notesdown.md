@@ -221,6 +221,9 @@ document.body.style.backgroundColor =
 
 ```
 ## Destructuring Objects & array & function param
+WeakSet is Set-like collection that stores only objects and removes them once they become inaccessible by other means.
+
+
 ```js
 let user = {
   name: "chlihi",
@@ -248,6 +251,7 @@ console.log(js);
 console.log(ht);
 ```
 ## Set Data Types And Methods
+ clear, size, keys, values…
  ```JS
  let arr = [1, 2, 3, 5, 1, 4, 1];
 let setUniqueValu = new Set(arr);
@@ -258,4 +262,33 @@ console.log(setUniqueValu.size);
 //Set vs WeakSet And Garbage Collector
 
  ```
-## Map Data Type Vs Object
+## WeakSet Data Types And Methods
+```JS
+let visitedSet = new WeakSet();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+visitedSet.add(john); // John visited us
+visitedSet.add(pete); // Then Pete
+visitedSet.add(john); // John again
+
+// visitedSet has 2 users now
+
+// check if John visited?
+alert(visitedSet.has(john)); // true
+
+// check if Mary visited?
+alert(visitedSet.has(mary)); // false
+
+john = null;
+
+// visitedSet will be cleaned automaticall
+```
+
+## Map Vs WeakMap  Data Types And Methods
+src: 
+[https://javascript.info/weakmap-weakset]
+
+## Map Vs WeakMap  Data Types And Methods
