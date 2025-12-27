@@ -313,7 +313,7 @@ min: this.min,
 max: this.max,
 lenght: this.lenght,
 next(){
-this.start++;
+  this.start++;
 return this.start < this.lenght ? {done:false, value:randint(this.min, this.max)} : {done:true};
 }
 };
@@ -324,3 +324,13 @@ console.log(array);
 ```
 Src: [Javascript info](https://javascript.info/iterable)
 
+  ## array methodes: Copywithin:
+  ```JS
+  let mainArr = [1,2,3,4,5,6,"MOhamed", "chlihi"]
+console.log(mainArr)
+
+mainArr.copyWithin(0, -2)
+mainArr.copyWithin(0, -2)
+
+console.log(mainArr)
+  ```
