@@ -352,4 +352,15 @@ let check = ageArray.every(checkAdult);
 console.log(check);
 // Output: false
 
+
+
+// With the arow function
+
+let numbers = [ 1 , 2 , 3 , 4 , 5];
+
+// use arrow function with every()
+let result = numbers.every(element => element < 6);
+console.log(result); 
+
+// Output: true
   ```
